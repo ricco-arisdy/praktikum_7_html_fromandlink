@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Halaman Utama</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #current-time {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 16px;
+    }
+  </style>
+  <script>
+    function getCurrentTime() {
+      var date = new Date();
+      var day = date.toLocaleDateString("en-US", { weekday: "long" });
+      var currentDate = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var seconds = date.getSeconds();
+
+      hours = (hours < 10) ? "0" + hours : hours;
+      minutes = (minutes < 10) ? "0" + minutes : minutes;
+      seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+      var currentTime = day + ", " + currentDate + " - " + hours + ":" + minutes + ":" + seconds;
+      return currentTime;
+    }
+
+    function updateCurrentTime() {
+      var currentTimeElement = document.getElementById("current-time");
+      var currentTime = getCurrentTime();
+      currentTimeElement.textContent = currentTime;
+    }
+
+    window.onload = function() {
+      updateCurrentTime();
+      
+      setInterval(updateCurrentTime, 1000);
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <section>
+      <div class="box">
+        <h3>Praktikum Forms dan Links</h3>
+      </div>
+      <p><strong>Ini Adalah Saya</strong></p>
+      <div class="btn">
+        <button class="buttonpage"><a href="form.html"><b>Biodata</b></a></button>
+        <button class="buttonpage"><a href="about_me.html"><b>About Me</b></a></button>
+        <button class="buttonpage"><a href="hobi.html"><b>Hobi</b></a></button>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <p>© 2023 DokarJava. All rights reserved.</p>
+  </footer>
+
+  <div id="current-time"></div>
+</body>
+</html>

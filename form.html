@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Halaman Utama</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form>
+      <fieldset>
+        <legend><b>Biodata</b></legend>
+        <p>Nama : <input type="text"></p>
+        <p>Alamat : <input type="text"></p>
+        <p>Password : <input type="password"></p>
+        <p>Jenis Kelamin: <br>
+          <input type="radio" name="jk" value="laki-laki" checked /> Laki-laki
+          <input type="radio" name="jk" value="perempuan" /> Perempuan
+        </p>
+        <p>Bahasa pemrograman yang dikuasai : <br>
+          <input type="checkbox" name="web" checked> Web
+          <input type="checkbox" name="mobile"> Mobile
+          <input type="checkbox" name="desk"> Desktop
+        </p>
+        <p>Kota asal:
+          <select>
+            <option>-</option>
+            <option>Jambi</option>
+            <option>Yogyakarta</option>
+          </select>
+        </p>
+        <p>Apa yang membuat kami harus memilih Anda?:<br>
+          <textarea rows="5" cols="40" placeholder="Tulis Jawaban Anda Disini"></textarea>
+        </p>
+        <div class="button-container">
+          <button class="submit-button">Submit</button>
+          <button class="back"><a href="index.html">Home</a></button>
+        </div>
+      </fieldset>
+    </form>
+    <footer>
+      <p>© 2023 DokarJava. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
